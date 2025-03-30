@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+skip-string-normalization = false
+
+[tool.isort]
+profile = "black"
+atomic = true
+multi_line_output = 3
+line_length = 88
+include_trailing_comma = true
+
+[tool.ruff]
+select = ["E", "F", "W", "C", "UP", "B", "A"]
+ignore = [
+  "E501",  # Ignore line length since Black handles it
+]
+line-length = 88
+
+[tool.mypy]
+python_version = "3.9"
+ignore_missing_imports = true
+disallow_untyped_defs = true
+warn_unused_ignores = true
+strict_optional = true
